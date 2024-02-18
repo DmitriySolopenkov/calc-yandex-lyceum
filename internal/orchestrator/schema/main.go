@@ -19,10 +19,10 @@ import (
 // @title           Распеределенный калькулятор (Яндекс.Лицей)
 // @version         0.1
 // @description     Распределенный ервис для параллельного вычисления арифметических выражений
-// @contact.name   Дмитрий Солопенков
-// @contact.url    https://t.me/solopenkovdmitriy
-// @host      localhost:8080
-// @BasePath  /
+// @contact.name   	Дмитрий Солопенков
+// @contact.url    	https://t.me/solopenkovdmitriy
+// @host      		localhost:8080
+// @BasePath  		/
 
 type TaskType struct {
 	Task     string `json:"task"`
@@ -35,12 +35,11 @@ type TaskType struct {
 // @Summary AddTask
 // @Tags Task
 // @Accept json
-// @Description Add one task
-// @Param input body TaskType true "Request body in JSON format"
+// @Description Добавить задание
+// @Param input body TaskType true "Тело запроса в формате JSON"
 // @Router / [post]
 func AddTask(c *gin.Context) {
 
-	// Construct the DELETE request
 	apiURL := "http://localhost:9999/"
 
 	var requestData TaskType
@@ -87,7 +86,7 @@ func AddTask(c *gin.Context) {
 
 // @Summary GetTask
 // @Tags Task
-// @Description Get one task
+// @Description Получить задание по id
 // @Param id path string true "ID" // Add a dummy parameter to make Swagger recognize the route
 // @Router /task/{id} [get]
 func GetTask(c *gin.Context) {
@@ -118,7 +117,7 @@ func GetTask(c *gin.Context) {
 
 // @Summary GetAllTask
 // @Tags Task
-// @Description Get all task
+// @Description Получить все задания
 // @Router /tasks [get]
 func GetAllTask(c *gin.Context) {
 	// Send a request to your API
