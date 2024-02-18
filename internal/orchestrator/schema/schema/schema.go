@@ -20,7 +20,7 @@ const schemaTemplate = `{
     "paths": {
         "/": {
             "post": {
-                "description": "Add one task",
+                "description": "Добавить задание",
                 "consumes": [
                     "application/json"
                 ],
@@ -30,7 +30,7 @@ const schemaTemplate = `{
                 "summary": "AddTask",
                 "parameters": [
                     {
-                        "description": "Request body in JSON format",
+                        "description": "Тело запроса в формате JSON",
                         "name": "input",
                         "in": "body",
                         "required": true,
@@ -44,7 +44,7 @@ const schemaTemplate = `{
         },
         "/task/{id}": {
             "get": {
-                "description": "Get one task",
+                "description": "Получить задание по id",
                 "tags": [
                     "Task"
                 ],
@@ -63,7 +63,7 @@ const schemaTemplate = `{
         },
         "/tasks": {
             "get": {
-                "description": "Get all task",
+                "description": "Получить все задания",
                 "tags": [
                     "Task"
                 ],
