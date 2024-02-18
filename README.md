@@ -67,3 +67,97 @@ docker-compose up --build
 ## Swagger
 
 Страница доступа [swagger](http://localhost:8080/swagger/index.html)
+
+## Примеры сопросов
+
+***Добавить задание***
+
+```bash
+curl -X 'POST' \
+  'http://localhost:8080/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "add_time": "1",
+  "dev_time": "1",
+  "mult_time": "1",
+  "sub_time": "1",
+  "task": "1+6*2"
+}'
+```
+
+***Результат***
+
+```bash
+{
+  "err": null,
+  "data": {
+    "reqID": "e892e52814fcedb6728aa38d7a52b1ca7aa4f37657db1e5a70d945b7c9ba77a4"
+  },
+  "info": ""
+}
+```
+
+---
+
+***Получить задание по id***
+
+```bash
+curl -X 'GET' \
+  'http://localhost:8080/task/e892e52814fcedb6728aa38d7a52b1ca7aa4f37657db1e5a70d945b7c9ba77a4' \
+  -H 'accept: application/json'
+```
+
+***Результат***
+
+```bash
+{
+  "err": null,
+  "data": {
+    "CreatedAt": "2024-02-18T17:39:51.036561Z",
+    "DeletedAt": null,
+    "Err": "",
+    "Expression": "1+6*2",
+    "ID": 1,
+    "Req_id": "e892e52814fcedb6728aa38d7a52b1ca7aa4f37657db1e5a70d945b7c9ba77a4",
+    "Res": "13",
+    "Status": true,
+    "ToDoTime": 2,
+    "UpdatedAt": "2024-02-18T17:39:57.057875Z"
+  },
+  "info": ""
+}
+```
+
+---
+
+***Получить все задания***
+
+```bash
+curl -X 'GET' \
+  'http://localhost:8080/tasks' \
+  -H 'accept: application/json'
+```
+
+***Результат***
+
+```bash
+{
+  "err": null,
+  "data": [
+    {
+      "CreatedAt": "2024-02-18T17:39:51.036561Z",
+      "DeletedAt": null,
+      "Err": "",
+      "Expression": "1+6*2",
+      "ID": 1,
+      "Req_id": "e892e52814fcedb6728aa38d7a52b1ca7aa4f37657db1e5a70d945b7c9ba77a4",
+      "Res": "13",
+      "Status": true,
+      "ToDoTime": 2,
+      "UpdatedAt": "2024-02-18T17:39:57.057875Z"
+    }
+  ],
+  "info": ""
+}
+```
