@@ -1,3 +1,5 @@
+https://t.me/solopenkovdmitriy
+
 # Распределенный вычислитель арифметических выражений
 
 <details>
